@@ -1,35 +1,16 @@
 #include<stdio.h>
-
-long fact(int a)
-
-{
-
-if (a == 0)
-
-return 1;
-
-else
-
-return(a * fact(a-1));
-
+long int multiplyNumbers(int n);
+int main() {
+    int n;
+    printf("Enter a positive integer: ");
+    scanf("%d",&n);
+    printf("Factorial of %d = %ld", n, multiplyNumbers(n));
+    return 0;
 }
 
-void main()
-
-{
-
-int num;
-
-long fact;
-
-printf(“Please enter a number for factorial : “);
-
-scanf(“%d”, &num);
-
-fact = fact(num);
-
-printf(“The factorial of the number %d is equal to : %ld\n”, num, fact);
-
-return 0;
-
+long int multiplyNumbers(int n) {
+    if (n>=1)
+        return n*multiplyNumbers(n-1);
+    else
+        return 1;
 }
